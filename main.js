@@ -12,26 +12,30 @@ const rl = readline.createInterface({
 
 
 const pigLatin = (word) => {
+// Trim whitespace and conver to LowerCase
   word = word.trim();
   // console.log(word)
   word = word.toLowerCase();
   // console.log(word)
   let manyWords = word.split(',');
-  console.log(manyWords);
+  // console.log(manyWords);
+
+// Started building the ability to handle multiple words in a comma seperated list, but not necessary now
+
   // if(word[1] != null){
   //   const manyWordsArray = () =. {
   //     word.forEach(
   //   }
   // }
-
+// Declare Vowels for proper behavior on comparison
   let vowels = ['a', 'e', 'i', 'o', 'u'];
   let wordArray = word.split('');
-  console.log(wordArray);
+// Create Arrays for processing the steps
   let holding = [];
   let solution = [];
 
   for (let index=0; index < 2; index++){
-    console.log(index)
+    // console.log(index)
     if(vowels.includes(wordArray[index])) {
       if(index === 0){
         let ansyay = word + 'yay';
@@ -45,7 +49,7 @@ const pigLatin = (word) => {
       holding.push(bucket)
       if (holding.length === 2) {
         let otherArray = holding.join("")
-        console.log(otherArray)
+        // console.log(otherArray)
         let onglay = word.slice(2, word.length)
           + word.slice(2, index)
           + otherArray
@@ -55,8 +59,8 @@ const pigLatin = (word) => {
       }
     }
     const answer = solution.join()
-    console.log(solution)
-    console.log(answer)
+    // console.log(solution)
+    // console.log(answer)
     return answer
   }
   
