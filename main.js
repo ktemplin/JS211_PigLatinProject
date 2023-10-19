@@ -12,10 +12,55 @@ const rl = readline.createInterface({
 
 
 const pigLatin = (word) => {
+  word = word.trim();
+  // console.log(word)
+  word = word.toLowerCase();
+  // console.log(word)
+  let manyWords = word.split(',');
+  console.log(manyWords);
+  // if(word[1] != null){
+  //   const manyWordsArray = () =. {
+  //     word.forEach(
+  //   }
+  // }
 
-  // Your code here
+  let vowels = ['a', 'e', 'i', 'o', 'u'];
+  let wordArray = word.split('');
+  console.log(wordArray);
+  let holding = [];
+  let solution = [];
 
-}
+  for (let index=0; index < 2; index++){
+    console.log(index)
+    if(vowels.includes(wordArray[index])) {
+      if(index === 0){
+        let ansyay = word + 'yay';
+        solution.push(ansyay);
+      } else {
+        let ordway = word.slice(index, word.length) + word.slice(0, index) + 'ay';
+        solution.push(ordway);
+      }
+    } else if(!vowels.includes(wordArray[index])){
+      let bucket = wordArray[index]
+      holding.push(bucket)
+      if (holding.length === 2) {
+        let otherArray = holding.join("")
+        console.log(otherArray)
+        let onglay = word.slice(2, word.length)
+          + word.slice(2, index)
+          + otherArray
+          + 'ay'
+        solution.push(onglay)
+      }
+      }
+    }
+    const answer = solution.join()
+    console.log(solution)
+    console.log(answer)
+    return answer
+  }
+  
+  
 
 // the first function called in the program to get an input from the user
 // to run the function use the command: node main.js
